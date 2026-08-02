@@ -1,8 +1,6 @@
-# Análisis de tareas usando Python, Grafos y Power BI
-Este proyecto simula la asignación de tareas dentro de una empresa mediante el cálculo de compatibilidad entre empleados y tareas. Utiliza Python para procesar los datos, construir un grafo bipartito y calcular métricas de compatibilidad, mientras que Power BI se emplea para visualizar los resultados mediante un informe interactivo.
 # Sistema de Asignación de Tareas Basado en Compatibilidad
 
-## Descripción
+## Introducción
 
 Este proyecto implementa un sistema de asignación de tareas basado en el grado de compatibilidad entre empleados y tareas. A partir de un conjunto de datos generado en Python, se calcula un porcentaje de compatibilidad considerando distintas habilidades ponderadas, se construyen grafos bipartitos para representar las relaciones entre empleados y tareas y, finalmente, se desarrollan informes interactivos en Power BI para facilitar el análisis de los resultados.
 
@@ -34,6 +32,30 @@ El objetivo del proyecto es mostrar un flujo completo de análisis de datos util
 # Estructura del proyecto
 
 ```text
+task-assignment-graph-analysis/
+│
+├── README.md
+├── src/
+│   ├── funciones_proyecto.py
+│   ├── menu_proyecto.py
+│   └── grafos_proyecto.py
+│
+├── data/
+│   ├── empresa.xlsx
+│   ├── grafo_completo.xlsx
+│   ├── grafo_80.xlsx
+│   └── top3_tareas.xlsx
+│
+├── dashboard/
+│   └── Informe.pbix
+│
+├── images/
+│   ├── dashboard1.png
+│   ├── dashboard2.png
+│   ├── dashboard3.png
+│   ├── grafo_completo.png
+│   ├── grafo_80.png
+│   └── top3.png
 Proyecto/
 │
 ├── empresa.xlsx
@@ -52,7 +74,7 @@ Proyecto/
 
 ## 1. Generación del conjunto de datos
 
-Como punto de partida se desarrolló un conjunto de datos sintético compuesto por **75 empleados** y **30 tareas**.
+Como punto de partida se desarrolló un conjunto de datos compuesto por **75 empleados** y **30 tareas**.
 
 Cada empleado posee un nivel de dominio en distintas habilidades, mientras que cada tarea define el nivel mínimo requerido para poder realizarla.
 
@@ -71,7 +93,7 @@ Para evaluar qué tan adecuado es un empleado para realizar una determinada tare
 | Trabajo en equipo       | 0.30 |
 | Resolución de problemas | 0.40 |
 
-Los pesos representan la importancia relativa de cada habilidad dentro del cálculo de compatibilidad.
+Los pesos representan la importancia de cada habilidad dentro del cálculo de compatibilidad.
 
 Cada habilidad puede tomar un nivel comprendido entre **0 y 4**.
 
@@ -97,31 +119,19 @@ La lógica utilizada consiste en comparar cuánto de los requerimientos de una t
 
 De esta forma se obtiene un valor normalizado entre **0 % y 100 %**, lo que permite comparar empleados para cualquier tarea independientemente de la cantidad o importancia de las habilidades requeridas.
 
-La interpretación del resultado es inmediata.
-$\sum\times 100 $
-Por ejemplo:
+La fórmula para calcular la compatibilidad es la siguiente:
+
 $C={{\sum_{i=1}^4 w_i\cdot min(E_i,T_i)}\over {\sum_{i=1}^4 w_i\cdot T_i}}\times 100$
 
 $E_i$= nivel del empleado.
 $T_i$= nivel requerido por la tarea.
 $w_i$= peso de la habilidad.
 
-${{\sum peso_i\cdot min(skill_{emp,i}, skill_{task,i})}\over {\sum peso_i\cdot skill_{task,i}}}\times 100$
-
-${{a-2} \over 2}5$
-**The Cauchy-Schwarz Inequality**\
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
-* **100 %** indica que el empleado satisface completamente todos los requerimientos ponderados de la tarea.
-* **85,7 %** indica que cumple aproximadamente el 85 % de los requisitos ponderados.
-* Valores bajos representan una menor adecuación entre el perfil del empleado y la tarea.
-
-Además, el proyecto contempla el caso particular de tareas sin requisitos específicos, asignándoles automáticamente una compatibilidad del 100 % para evitar divisiones por cero y mantener una interpretación consistente del resultado.
-
 ---
 
 ## Consulta de compatibilidad
 
-Como primera aplicación del modelo desarrollado se implementó un programa de consola (`menu_proyecto.py`) que permite al usuario ingresar el identificador de un empleado y el identificador de una tarea para obtener el porcentaje de compatibilidad correspondiente.
+Como primera aplicación del modelo desarrollado se implementó un menú (`menu_proyecto.py`) que permite al usuario ingresar el identificador de un empleado y el identificador de una tarea para obtener el porcentaje de compatibilidad correspondiente.
 
 Esta funcionalidad permite verificar individualmente cualquier relación empleado–tarea generada por el sistema.
 
@@ -179,7 +189,7 @@ Cada uno de los datasets generados mediante Python fue utilizado para construir 
 
 ## Hoja 1 — Distribución de compatibilidades
 
-La primera hoja utiliza el conjunto de datos correspondiente al grafo completo.
+La primera hoja utiliza el conjunto de datos correspondiente al grafo completo (`grafo_completo.xlsx`).
 
 Incluye un gráfico que muestra la cantidad de relaciones empleado–tarea agrupadas por intervalos de compatibilidad (0–20 %, 20–40 %, 40–60 %, 60–80 % y 80–100 %).
 
@@ -191,7 +201,7 @@ Esta visualización permite conocer cómo se distribuyen todas las compatibilida
 
 ## Hoja 2 — Compatibilidades altas
 
-La segunda hoja utiliza únicamente las relaciones con compatibilidad mayor o igual al 80 %.
+La segunda hoja utiliza únicamente las relaciones con compatibilidad mayor o igual al 80 % (`grafo_reducido_80.xlsx`).
 
 Se presentan dos gráficos principales:
 
@@ -206,7 +216,7 @@ Estas visualizaciones permiten identificar perfiles versátiles y tareas con amp
 
 ## Hoja 3 — Recomendación por empleado
 
-La tercera hoja está orientada al análisis individual.
+La tercera hoja está orientada al análisis individual a partir del conjunto de datos filtrado (`grafo_top_3_tareas_por_empleado.xlsx`).
 
 Mediante un **segmentador (Slicer)** el usuario puede seleccionar un empleado y visualizar automáticamente:
 
@@ -243,11 +253,10 @@ El proyecto puede ampliarse de diversas maneras:
 * permitir que los pesos de las habilidades sean configurables por el usuario;
 * utilizar bases de datos SQL en lugar de archivos Excel;
 * desarrollar una interfaz gráfica para facilitar la interacción con el sistema;
-* implementar algoritmos de optimización que asignen automáticamente empleados a tareas maximizando la compatibilidad global;
 * desplegar la aplicación como una solución web.
 
 ---
 
-# Autor
+# Franco Palacios
 
 Proyecto desarrollado como parte de un portfolio orientado al análisis de datos, Python, teoría de grafos y Power BI.

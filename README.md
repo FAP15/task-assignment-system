@@ -149,8 +149,9 @@ Este grafo contiene todas las relaciones posibles entre empleados y tareas.
 Cada uno de los **75 empleados** se encuentra conectado con las **30 tareas**, obteniéndose un total de **2250 relaciones**.
 
 Este grafo constituye la representación completa del sistema de compatibilidad y sirve como punto de partida para el resto de los análisis.
+## Grafo bipartito completo
 
-> *(Insertar imagen del grafo completo.)*
+🔗 **[Explorar grafo interactivo](https://fap15.github.io/task-assignment-graph-analysis/grafos/grafo_bipartito.html)**
 
 ---
 
@@ -160,7 +161,7 @@ El segundo grafo filtra la red completa y conserva únicamente aquellas relacion
 
 Este filtrado permite identificar rápidamente qué empleados resultan adecuados para cada tarea y cuáles son las tareas que cuentan con una mayor cantidad de candidatos compatibles.
 
-> *(Insertar imagen del grafo filtrado.)*
+ 🔗 **[Explorar grafo interactivo](https://fap15.github.io/task-assignment-graph-analysis/grafos/grafo_bipartito_reducido_80.html)**
 
 ---
 
@@ -170,7 +171,7 @@ El tercer grafo selecciona únicamente las tres tareas con mayor porcentaje de c
 
 Esta representación facilita la recomendación de tareas, mostrando aquellas opciones que mejor se ajustan al perfil de cada trabajador.
 
-> *(Insertar imagen del grafo Top 3.)*
+ 🔗 **[Explorar grafo interactivo](https://fap15.github.io/task-assignment-graph-analysis/grafos/grafo_bipartito_top_3.html)**
 
 ---
 

@@ -52,6 +52,7 @@ task-assignment-graph-analysis/
 │   ├── graficohoja1.png
 │   ├── graficohoja2.png
 │   ├── graficohoja3.png
+|   ├── compatibilidad_formula1.png
 |
 ├── src/
 │   ├── funciones_proyecto.py
@@ -114,11 +115,10 @@ De esta forma se obtiene un valor normalizado entre **0 % y 100 %**, lo que perm
 
 La fórmula para calcular la compatibilidad es la siguiente:
 
-$C=\frac{\sum_{i=1}^4 w_i\cdot min(E_i,T_i)}{\sum_{i=1}^4 w_i\cdot T_i}\times 100$
+![Formula de compatibilidad](imagenes/compatibilidad_formula1.png)
 
-$E_i$= nivel del empleado.
-$T_i$= nivel requerido por la tarea.
-$w_i$= peso de la habilidad.
+<!--$C=\frac{\sum_{i=1}^4 w_i\cdot min(E_i,T_i)}{\sum_{i=1}^4 w_i\cdot T_i}\times 100$-->
+<!--$E_i$= nivel del empleado. $T_i$= nivel requerido por la tarea. $w_i$= peso de la habilidad.-->
 
 ---
 

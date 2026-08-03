@@ -1,4 +1,5 @@
 # Sistema de Asignación de Tareas Basado en Compatibilidad
+Proyecto de análisis de datos para explorar la compatibilidad entre empleados y tareas mediante el uso de Python, grafos y Power BI.
 
 ## Introducción
 

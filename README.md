@@ -114,7 +114,7 @@ De esta forma se obtiene un valor normalizado entre **0 % y 100 %**, lo que perm
 
 La fórmula para calcular la compatibilidad es la siguiente:
 
-$C={{\sum_{i=1}^4 w_i\cdot min(E_i,T_i)}\over {\sum_{i=1}^4 w_i\cdot T_i}}\times 100$
+$C=\frac{\sum_{i=1}^4 w_i\cdot min(E_i,T_i)}{\sum_{i=1}^4 w_i\cdot T_i}\times 100$
 
 $E_i$= nivel del empleado.
 $T_i$= nivel requerido por la tarea.

@@ -49,7 +49,7 @@ task-assignment-graph-analysis/
 ├── dashboard/
 │   └── Informe.pbix
 │
-├── images/
+├── imagenes/
 │   ├── dashboard1.png
 │   ├── dashboard2.png
 │   ├── dashboard3.png
@@ -195,7 +195,7 @@ Incluye un gráfico que muestra la cantidad de relaciones empleado–tarea agrup
 
 Esta visualización permite conocer cómo se distribuyen todas las compatibilidades calculadas por el sistema.
 
-> *(Insertar captura del dashboard.)*
+![Gráfico de distribución de compatibilidades](imagenes/graficohoja1.png)
 
 ---
 
@@ -210,7 +210,7 @@ Se presentan dos gráficos principales:
 
 Estas visualizaciones permiten identificar perfiles versátiles y tareas con amplia disponibilidad de personal.
 
-> *(Insertar captura del dashboard.)*
+![Gráficos de empleados y tareas](imagenes/graficohoja2.png)
 
 ---
 
@@ -226,7 +226,7 @@ Mediante un **segmentador (Slicer)** el usuario puede seleccionar un empleado y 
 
 Esta vista funciona como una herramienta sencilla de recomendación de tareas basada en los resultados obtenidos por el modelo de compatibilidad.
 
-> *(Insertar captura del dashboard.)*
+![Gráfico de la hoja 3](imagenes/graficohoja3.png)
 
 ---
 

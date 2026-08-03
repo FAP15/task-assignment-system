@@ -33,38 +33,31 @@ El objetivo del proyecto es mostrar un flujo completo de análisis de datos util
 
 ```text
 task-assignment-graph-analysis/
-│
-├── README.md
+|
+├── dashboard/
+│   └── proyecto.pbix
+|
+├── datasets/
+│   ├── empresa.xlsx
+│   ├── grafo_completo.xlsx
+│   ├── grafo_reducido_80.xlsx
+│   └── grafo_top3_tareas_por_empleado.xlsx
+|
+├── grafos/
+│   ├── grafo_bipartito.html
+│   ├── grafo_bipartito_reducido_80.html
+│   ├── grafo_bipartito_top_3.html
+|
+├── imagenes/
+│   ├── graficohoja1.png
+│   ├── graficohoja2.png
+│   ├── graficohoja3.png
+|
 ├── src/
 │   ├── funciones_proyecto.py
 │   ├── menu_proyecto.py
 │   └── grafos_proyecto.py
-│
-├── data/
-│   ├── empresa.xlsx
-│   ├── grafo_completo.xlsx
-│   ├── grafo_80.xlsx
-│   └── top3_tareas.xlsx
-│
-├── dashboard/
-│   └── Informe.pbix
-│
-├── imagenes/
-│   ├── dashboard1.png
-│   ├── dashboard2.png
-│   ├── dashboard3.png
-│   ├── grafo_completo.png
-│   ├── grafo_80.png
-│   └── top3.png
-Proyecto/
-│
-├── empresa.xlsx
-├── funciones_proyecto.py
-├── menu_proyecto.py
-├── grafos_proyecto.py
-├── grafo_completo.xlsx
-├── grafo_80.xlsx
-├── top3_tareas.xlsx
+|
 └── README.md
 ```
 
